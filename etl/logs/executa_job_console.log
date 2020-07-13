@@ -1,0 +1,74 @@
+DEBUG: Using PENTAHO_JAVA_HOME
+DEBUG: _PENTAHO_JAVA_HOME=C:\Program Files (x86)\Java\jre1.8.0_231
+DEBUG: _PENTAHO_JAVA=C:\Program Files (x86)\Java\jre1.8.0_231\bin\java.exe
+
+C:\pdi\pdi-ce-8.3.0.0-371\data-integration>"C:\Program Files (x86)\Java\jre1.8.0_231\bin\java.exe"  "-Xms512m" "-Xmx1024m" "-XX:MaxPermSize=256m" "-Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2" "-Djava.library.path=libswt\win32" "-DKETTLE_HOME=" "-DKETTLE_REPOSITORY=" "-DKETTLE_USER=" "-DKETTLE_PASSWORD=" "-DKETTLE_PLUGIN_PACKAGES=" "-DKETTLE_LOG_SIZE_LIMIT=" "-DKETTLE_JNDI_ROOT=" -jar launcher\launcher.jar -lib ..\libswt\win32  -main org.pentaho.di.kitchen.Kitchen -initialDir "C:\pdi\pdi-ce-8.3.0.0-371\data-integration"\ /rep:teste_lopes_labs /job:00_mainjob_etl_apple_store /dir: /level:Basic /log:"C:\teste_lopes_lab\etl\logs\executa_job.log" 
+10:16:06,638 INFO  [KarafBoot] Checking to see if org.pentaho.clean.karaf.cache is enabled
+10:16:14,871 INFO  [KarafInstance] 
+*******************************************************************************
+*** Karaf Instance Number: 1 at C:\pdi\pdi-ce-8.3.0.0-371\data-integration\ ***
+***   .\system\karaf\caches\kitchen\data-1                                  ***
+*** FastBin Provider Port:52901                                             ***
+*** Karaf Port:8802                                                         ***
+*** OSGI Service Port:9051                                                  ***
+*******************************************************************************
+2020/05/11 10:16:34 - Kitchen - Logging is at level : Basic
+2020/05/11 10:16:34 - Kitchen - Start of run.
+2020/05/11 10:16:34 - RepositoriesMeta - Reading repositories XML file: C:\Users\work\.kettle\repositories.xml
+Updating configuration from org.apache.karaf.shell.cfg
+Updating configuration from org.apache.aries.rsa.provider.fastbin.cfg
+Updating configuration from org.ops4j.pax.web.cfg
+2020/05/11 10:16:44 - 00_mainjob_etl_apple_store - Start of job execution
+2020/05/11 10:16:44 - 00_mainjob_etl_apple_store - Starting entry [load_stage]
+2020/05/11 10:16:44 - load_stage - Using run configuration [Pentaho local]
+2020/05/11 10:16:44 - load_stage - Using legacy execution engine
+2020/05/11 10:16:44 - 01_stg_apple_store - Dispatching started for transformation [01_stg_apple_store]
+2020/05/11 10:16:44 - Table output.0 - Connected to database [Postgres localhost public] (commit=1000)
+2020/05/11 10:16:44 - CSV file input.0 - Header row skipped in file 'C:\teste_lopes_lab\etl\input\apple_store.csv'
+2020/05/11 10:16:45 - CSV file input.0 - Finished processing (I=7198, O=0, R=0, W=7197, U=0, E=0)
+2020/05/11 10:16:45 - Table output.0 - Finished processing (I=0, O=7197, R=7197, W=7197, U=0, E=0)
+2020/05/11 10:16:45 - 00_mainjob_etl_apple_store - Starting entry [load dim genre]
+2020/05/11 10:16:45 - load dim genre - Using run configuration [Pentaho local]
+2020/05/11 10:16:45 - load dim genre - Using legacy execution engine
+2020/05/11 10:16:45 - Carte - Installing timer to purge stale objects after 1440 minutes.
+2020/05/11 10:16:45 - 02_dim_genre - Dispatching started for transformation [02_dim_genre]
+2020/05/11 10:16:45 - d_genre.0 - Connected to database [Postgres localhost public] (commit=1000)
+2020/05/11 10:16:45 - read_stg_apple_store.0 - Finished reading query, closing connection.
+2020/05/11 10:16:45 - read_stg_apple_store.0 - Finished processing (I=24, O=0, R=0, W=24, U=0, E=0)
+2020/05/11 10:16:45 - Add sequence.0 - Finished processing (I=0, O=0, R=24, W=24, U=0, E=0)
+2020/05/11 10:16:45 - d_genre.0 - Finished processing (I=0, O=24, R=24, W=24, U=0, E=0)
+2020/05/11 10:16:45 - 00_mainjob_etl_apple_store - Starting entry [load dim app]
+2020/05/11 10:16:45 - load dim app - Using run configuration [Pentaho local]
+2020/05/11 10:16:45 - load dim app - Using legacy execution engine
+2020/05/11 10:16:45 - 03_dim_app - Dispatching started for transformation [03_dim_app]
+2020/05/11 10:16:46 - Table output d_app.0 - Connected to database [Postgres localhost public] (commit=1000)
+2020/05/11 10:16:46 - Table input d_genre.0 - Finished reading query, closing connection.
+2020/05/11 10:16:46 - Table input d_genre.0 - Finished processing (I=24, O=0, R=0, W=24, U=0, E=0)
+2020/05/11 10:16:46 - Table input stg_apple_store.0 - Finished reading query, closing connection.
+2020/05/11 10:16:46 - Table input stg_apple_store.0 - Finished processing (I=7197, O=0, R=0, W=7197, U=0, E=0)
+2020/05/11 10:16:46 - Merge join.0 - Finished processing (I=0, O=0, R=7221, W=7197, U=0, E=0)
+2020/05/11 10:16:46 - Select values.0 - Finished processing (I=0, O=0, R=7197, W=7197, U=0, E=0)
+2020/05/11 10:16:46 - Split fields.0 - Finished processing (I=0, O=0, R=7197, W=7197, U=0, E=0)
+2020/05/11 10:16:46 - Table output d_app.0 - Finished processing (I=0, O=7197, R=7197, W=7197, U=0, E=0)
+2020/05/11 10:16:46 - 00_mainjob_etl_apple_store - Starting entry [load fato apple store]
+2020/05/11 10:16:46 - load fato apple store - Using run configuration [Pentaho local]
+2020/05/11 10:16:46 - load fato apple store - Using legacy execution engine
+2020/05/11 10:16:46 - 04_fato_apple_store - Dispatching started for transformation [04_fato_apple_store]
+2020/05/11 10:16:46 - Table output f_apple_store.0 - Connected to database [Localhost Postgres public] (commit=1000)
+2020/05/11 10:16:46 - Table input stg_apple_store.0 - Finished reading query, closing connection.
+2020/05/11 10:16:46 - Table input stg_apple_store.0 - Finished processing (I=7197, O=0, R=0, W=7197, U=0, E=0)
+2020/05/11 10:16:46 - Select values.0 - Finished processing (I=0, O=0, R=7197, W=7197, U=0, E=0)
+2020/05/11 10:16:47 - Formula.0 - Finished processing (I=0, O=0, R=7197, W=7197, U=0, E=0)
+2020/05/11 10:16:47 - Table output f_apple_store.0 - Finished processing (I=0, O=7197, R=7197, W=7197, U=0, E=0)
+2020/05/11 10:16:47 - 00_mainjob_etl_apple_store - Starting entry [Success]
+2020/05/11 10:16:47 - 00_mainjob_etl_apple_store - Starting entry [Mail sucesso]
+2020/05/11 10:16:50 - 00_mainjob_etl_apple_store - Finished job entry [Mail sucesso] (result=[true])
+2020/05/11 10:16:50 - 00_mainjob_etl_apple_store - Finished job entry [Success] (result=[true])
+2020/05/11 10:16:50 - 00_mainjob_etl_apple_store - Finished job entry [load fato apple store] (result=[true])
+2020/05/11 10:16:50 - 00_mainjob_etl_apple_store - Finished job entry [load dim app] (result=[true])
+2020/05/11 10:16:50 - 00_mainjob_etl_apple_store - Finished job entry [load dim genre] (result=[true])
+2020/05/11 10:16:50 - 00_mainjob_etl_apple_store - Finished job entry [load_stage] (result=[true])
+2020/05/11 10:16:50 - 00_mainjob_etl_apple_store - Job execution finished
+2020/05/11 10:16:50 - Kitchen - Finished!
+2020/05/11 10:16:50 - Kitchen - Start=2020/05/11 10:16:34.573, Stop=2020/05/11 10:16:50.612
+2020/05/11 10:16:50 - Kitchen - Processing ended after 16 seconds.
